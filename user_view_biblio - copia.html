@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <title>User View</title>
+    <style type="text/css">
+   
+        #sidebar{
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        background: #151719;
+        left: -200px;
+        transition: all 500ms linear;
+        }
+        #sidebar.active{
+        left:0px;
+        }
+        #sidebar ul li{
+        color: rgba(230,230,230,0.9);
+        list-style: none;
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(100,100,100,0.3);
+        }
+        #sidebar .toggle-btn{
+        position: absolute;
+        left: 230px;
+        top: 20px;
+        }
+        #sidebar .toggle-btn span{
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: #151719;
+        margin: 5px 0px;
+        }
+                
+ 
+
+    </style>
+      <link rel="stylesheet" type="text/css" href="css/bulma-0.8.0/css/bulma.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        function toggleSidebar(){
+        document.getElementById("sidebar").classList.toggle('active');
+        }
+    </script>
+
+</head>
+
+<html>
+
+<body>
+    <div>
+        <section class="hero is-warning is-medium">
+                <!-- Hero head: will stick at the top -->
+                <div class="hero-head">
+                    <nav class="navbar">
+                        <div class="container is-fixed-top">
+                            <div class="navbar-brand">
+                                <a class="navbar-item">
+                                <img src="img/logo_biblioteca.png" alt="Logo">
+                                </a>
+                                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                </span>
+                            </div>
+                            <div id="navbarMenuHeroA" class="navbar-menu">
+                                <div class="navbar-end">
+                                <!--a class="navbar-item is-active"></a-->
+                                <a class="navbar-item">
+                                    ORCE
+                                </a>
+                                <a class="navbar-item">
+                                    FAQ                            
+                                </a>
+                                <span class="navbar-item">
+                                    <a class="button is-info is-inverted" href="login.html">
+                                        <span>SALIR</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </nav>
+                </div>
+        </section>   
+    </div>
+
+    <div class="content">
+        <div>
+            <div class="columns">
+                <div class="column is-1">
+                    <div id="sidebar">
+                        <div class="toggle-btn" onclick="toggleSidebar()">
+                            <a>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </div>
+                        <ul>
+                            <a href="user_view_info.html"><li>Mi Cuenta</li></a> 
+                            <a href="user_view_biblio.html"><li>Material Bibliográfico</li></a> 
+                            <a href=""><li>Historial</li></a> 
+                            <a href=""><li>Ayuda</li></a> 
+                        </ul>
+                    </div>
+                </div> <!-- sidebar -->
+    
+                <div class="column is-1"></div> <!-- sidebar space -->
+                
+                <div class="columns" style="margin-top: 30px; margin-left: 15px;">
+                    <h1>DATOS DEL USUARIO<br></h1>
+                    
+
+                    <div class="column" style="margin-top: 30px">                   
+                        <img src="img/captura.png" style="max-width: 150px; max-height: 150px; border-style:hidden; border-radius: 25%" > 
+                    </div>
+
+                    <div class="column" style="margin-top: 30px;">
+                        <h1 style="align-items: center;">///Apellidos<br>///Nombres</h1>
+                    </div>
+                </div> <!-- sidebar space -->
+                
+  
+
+                <!--
+                <h1>DATOS DEL USUARIO</h1> <br>
+                <div class="column" style="margin-top: 15px">                   
+                    <img src="img/captura.png" style="max-width: 150px; max-height: 150px; border-style:hidden; border-radius: 25%" > 
+                </div>
+    
+                <div class="column" style="margin-top: 15px">
+                    <h1 style="align-items: center;">///Apellidos<br>///Nombres</h1>
+                    <img scr="img/captura.png">
+                </div>
+            -->
+            
+            </div>
+            <div> <br></div>
+            <div class="columns">
+                <div class="column is-2">
+                </div> <!-- sidebar -->
+
+                <table style="font-size: 18px; margin-left: 15px;">
+                    <!--tr> 
+                        <th  style="width: 30%; font-size: larger"> First Name</th>
+                        <th  style="width: 70%; font-size: larger">Last Name</th>
+                    </tr-->
+    
+                    <tr>
+                        <td><b>CODIGO</b></td>
+                        <td>Codigo</td>
+                    </tr>
+                    <tr>
+                        <td><b>FACULTAD</b></td>
+                        <td>Facultad</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>ESPECIALIDAD</b></td>
+                        <td>Especialidad</td>
+                    </tr>
+                    <tr>
+                        <td><b>SITUACIÓN</b></td>
+                        <td>Situación</td>
+                    </tr>
+                    <tr>
+                        <td><b>CICLO RELATIVO</b></td>
+                        <td>Ciclo_relativo</td>
+                    </tr>
+                    </tr>
+                </table>   
+            </div>
+            
+        </div> 
+    </div>
+
+    <footer class="jumbotron text-center" style="margin-bottom:0">
+            <p>
+                <strong>PROYECTO CON FINES EDUCATIVOS</strong> <br>Créditos del material a quien corresponda.
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+/* Full-width input fields */
+body{
+  margin: 0;
+  padding: 0;
+  background: url(../img/ciclo-verano.jpg);
+  background-size: 1900px;
+  font-family: "Arial";
+}
+
+.loginbox{
+  width: 350px;
+  height: 500px;
+  background: #00000f;
+  color: #b3d4fc;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 50px;
+}
+
+.avatar{
+  width: 84px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 42px);
+
+}
+
+h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 32px;
+}
+
+h3{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.loginbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.loginbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.loginbox input[type="submit"]{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #ff2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+.loginbox a{
+  text-decoration: none ;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ff2525;
+  text-align: center;
+}
+
+.loginbox a:hover{
+  color: #ffc107;
+}
