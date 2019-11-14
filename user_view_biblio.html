@@ -38,11 +38,122 @@
 
         }
 
+        /*************/
+        .filterDiv {
+        float: left;
+        background-color: #2196F3;
+        color: #ffffff;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        margin: 2px;
+        display: none;
+        }
+
+        .show {
+        display: block;
+        }
+
+        .container {
+        margin-top: 20px;
+        overflow: hidden;
+        }
+
+        /* Style the buttons */
+        .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        }
+
+        .btn:hover {
+        background-color: #ddd;
+        }
+
+        .btn.active {
+        background-color: #666;
+        color: white;
+        }
+              
+        /*****************/
+
+        #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+        }
+
+        #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+        }
+
+        #myTable th, #myTable td {
+        text-align: left;
+        padding: 12px;
+        }
+
+        #myTable tr {
+        border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header, #myTable tr:hover {
+        background-color: #f1f1f1;
+        }
     </style>
+
 
     <script type="text/javascript">
         function toggleSidebar(){
         document.getElementById("sidebar").classList.toggle('active');
+        }
+
+        /***********/
+
+        /***********/
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }       
+            }
+        }
+
+        /** REVISAR ACÁ **/
+        function filterSelection(c) {
+            return c;
+        }
+        /****/
+       
+        var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function(){
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
         }
     </script>
 
@@ -101,22 +212,72 @@
                         </a>
                     </div>
                     <ul>
-                        <li>Mi Cuenta</li>
-                        <li>Material Bibliográfico</li>
-                        <li>Historial</li>
-                        <li>Ayuda</li>
+                            <a href="user_view_info.html"><li>Mi Cuenta</li></a> 
+                            <a href="user_view_biblio.html"><li>Material Bibliográfico</li></a> 
+                            <a href=""><li>Historial</li></a> 
+                            <a href=""><li>Ayuda</li></a> 
                     </ul>
                 </div>
             </div>
             
-            <div class="column">Auto</div>
-            <div class="column">Auto</div>
-            <div class="column">Auto</div>
-            <div class="column">Auto</div>
-            
+            <div class="column is-1"></div> <!-- sidebar space -->
+                
+            <div class="column" style="margin-top: 30px; margin-left: 15px;">
+                <h1>LIBROS DISPONIBLES<br></h1>
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('1')"> Name</button>
+                    <button class="btn" onclick="filterSelection('2')"> Country</button>
+                </div>
+
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+                <table id="myTable">
+                    <tr class="header">
+                        <th style="width:30%;">Nombre</th>
+                        <th style="width:20%;">Autor</th>
+                        <th style="width:20%;">Tipo</th>
+                        <th style="width:30%;">ISBN</th>
+                    </tr>
+                    <tr>
+                        <td>Nombre_1 </td>
+                        <td>Autor_1</td>
+                        <td>Tipo_1 </td>
+                        <td>Code_1</td>                    
+                    </tr>
+                    <tr>
+                        <td>Nombre_2 </td>
+                        <td>Autor_2</td>
+                        <td>Tipo_2 </td>
+                        <td>Code_2</td>                    
+                    </tr>
+                    <tr>
+                        <td>Nombre_3 </td>
+                        <td>Autor_3</td>
+                        <td>Tipo_3 </td>
+                        <td>Code_3</td>                    
+                    </tr>
+                    <tr>
+                        <td>Nombre_4 </td>
+                        <td>Autor_4</td>
+                        <td>Tipo_4 </td>
+                        <td>Code_4</td>                    
+                    </tr>
+                    <tr>
+                        <td>Nombre_5 </td>
+                        <td>Autor_5</td>
+                        <td>Tipo_5 </td>
+                        <td>Code_5</td>                    
+                    </tr>
+                    <tr>
+                        <td>Nombre_6 </td>
+                        <td>Autor_6</td>
+                        <td>Tipo_6 </td>
+                        <td>Code_6</td>                    
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-
     <footer class="jumbotron text-center" style="margin-bottom:0">
             <p>
                 <strong>PROYECTO CON FINES EDUCATIVOS</strong> <br>Créditos del material a quien corresponda.
